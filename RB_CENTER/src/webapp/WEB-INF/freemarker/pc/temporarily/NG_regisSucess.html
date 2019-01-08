@@ -1,0 +1,45 @@
+<#include "../common/refile/quote.html">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+    var second = 5;
+    window.onload=function(){
+        // 初始化内容
+        settime();
+    }
+function settime() {
+    if (second == 0) {
+        window.location=EntryGlobalLocation+"login.html";
+    } else {
+        $(".reg_Success_Bottom").html(second+"S后返回登录页面");
+        second--;
+        setTimeout(settime, 1000)
+    }
+}
+</script>
+<div class="wrapper sticky_footer">
+    <#include "../common/header/NG_header.html">
+    <div id="content" class="">
+        <div class="inner">
+            <div class="general_content">
+                <div class="main_content">
+                    <#include "../common/sub/NG_nowAddress.html">
+                </div>
+                <div class="clearboth"></div>
+            </div>
+        </div>
+    </div>
+    <!--成功页面-->
+    <div class="reg_Success">
+        <div class="reg_Success_Top">账号注册成功!您的账号为:${regSuccessAccount}</div>
+        <div class="reg_Success_Center">>>>>>><a href=""> 点击进入个人中心</a><<<<<<</div>
+        <div class="reg_Success_Bottom"></div>
+    </div>
+    <!--成功页面-->
+</div>
+<!-- FOOTER BEGIN -->
+<#include "../common/footer/NG_footer.html"></include>
+<!-- FOOTER END -->

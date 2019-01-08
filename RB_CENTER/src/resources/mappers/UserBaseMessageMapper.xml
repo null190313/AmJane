@@ -1,0 +1,59 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.UserBaseMessageDao">
+    <resultMap id="BaseUserMessageMap" type="org.lxrookie.start.substance.entity.UserBaseMessageEntity">
+        <id column="USERID"              property="userId" jdbcType="VARCHAR"/>
+        <result column="USER_REALNAME"   property="userRealName" jdbcType="VARCHAR"/>
+        <result column="USER_ACCOUNT"    property="userAccount" jdbcType="VARCHAR"/>
+        <result column="USER_PASSWORD"   property="userPasword" jdbcType="VARCHAR"/>
+        <result column="USER_NICKNAME"   property="userNickName" jdbcType="VARCHAR"/>
+        <result column="USER_EAMIL"      property="userEamil" jdbcType="VARCHAR"/>
+        <result column="USER_PHONE"      property="userPhone" jdbcType="VARCHAR"/>
+        <result column="USER_CREATETIME" property="userCreateTime" jdbcType="TIMESTAMP"/>
+        <result column="USER_TYPE"       property="userType" jdbcType="INTEGER"/>
+        <result column="USER_ADDRESS"    property="userAddress" jdbcType="VARCHAR"/>
+        <result column="USER_PROVINCE"   property="userProvince" jdbcType="VARCHAR"/>
+        <result column="USER_CITY"       property="userCity" jdbcType="VARCHAR"/>
+        <result column="USER_COUNTY"     property="userCounty" jdbcType="VARCHAR"/>
+        <result column="USER_QQ_NUM"     property="userQQNum" jdbcType="VARCHAR"/>
+        <result column="USER_WX_NUM"     property="userWXNum" jdbcType="VARCHAR"/>
+        <result column="USER_IDCARD"     property="userIDCard" jdbcType="VARCHAR"/>
+        <result column="USER_BANNED_STATE"   property="userBannedState" jdbcType="VARCHAR"/>
+        <result column="USER_INTEGRAL"   property="userIntegral" jdbcType="INTEGER"/>
+        <result column="USER_SEX"        property="userSex" jdbcType="INTEGER"/>
+        <result column="USER_QQ_ID"      property="userQQId" jdbcType="VARCHAR"/>
+        <result column="USER_WX_ID"      property="userWXId" jdbcType="VARCHAR"/>
+        <result column="USER_BD_ID"      property="userBDId" jdbcType="VARCHAR"/>
+        <result column="USER_REAL_NAME_STATE" property="userRealNameState" jdbcType="INTEGER"/>
+        <result column="USER_LAST_LOGIN_TIME" property="userLastLoginTime" jdbcType="TIMESTAMP"/>
+        <result column="USER_PROFESSIONAL" property="userProfessional" jdbcType="VARCHAR"/>
+        <result column="USER_HEAD_PIC_URL" property="userHeadPicUrl" jdbcType="VARCHAR"></result>
+        <result column="USER_BIRTHDAY" property="userBirthday" jdbcType="TIMESTAMP"/>
+        <result column="USER_IDENTITY" property="userIdentity" jdbcType="INTEGER"></result>
+        <result column="USER_INTRODUCTION" property="userIntroduction" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+
+
+
+
+    <select id="selectUserBaseMessageByPhone" resultMap="BaseUserMessageMap">
+          select *from USER_BASE_MESSAGE WHERE USER_PHONE=#{phone}
+    </select>
+
+    <select id="selectUserBaseByNickName" resultMap="BaseUserMessageMap">
+        select *from USER_BASE_MESSAGE WHERE USER_NICKNAME=#{nickName}
+    </select>
+
+    <insert id="insertUserBaseMessageEntity">
+        insert into USER_BASE_MESSAGE(
+        USERID,USER_ACCOUNT,USER_PASSWORD,USER_NICKNAME,USER_PHONE,USER_TYPE
+        ) VALUES (#{userId},#{userAccount},#{userPasword},#{userNickName},#{userPhone},#{userType})
+    </insert>
+    <select id="selectUserBaseByAccount" resultMap="BaseUserMessageMap">
+          select *from USER_BASE_MESSAGE WHERE USER_ACCOUNT=#{userAccount}
+    </select>
+
+</mapper>

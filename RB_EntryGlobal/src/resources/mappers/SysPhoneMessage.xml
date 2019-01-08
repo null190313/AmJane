@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.SysPhoneMessageDao">
+    <resultMap id="BaseLogRecordResultMap" type="org.lxrookie.start.substance.entity.SysPhoneMessageEntity">
+            <id column="SYS_PHONE_ID"              property="sysPhoneId"              jdbcType="VARCHAR" />
+            <result column="SYS_PHONE_NUM"     property="sysPhoneNum"          jdbcType="VARCHAR" />
+            <result column="SYS_PHONE_CONTENT"     property="sysPhoneContent"         jdbcType="VARCHAR" />
+            <result column="SYS_PHONE_USER_ID"       property="sysPhoneUserId"           jdbcType="VARCHAR" />
+            <result column="SYS_PHONE_CATEGORY_STATE" property="sysPhoneCategoryState"      jdbcType="INTEGER" />
+            <result column="SYS_PHONE_CREATE_TIME"      property="sysPhoneCreateTime"          jdbcType="TIMESTAMP" />
+    </resultMap>
+
+
+
+
+</mapper>

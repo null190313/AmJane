@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_BLOG" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_CENTER" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_CLOUD" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_DIARY" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_EntryGlobal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_EurekaCenter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_LOGS" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_NOVEL" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RB_SHARING" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

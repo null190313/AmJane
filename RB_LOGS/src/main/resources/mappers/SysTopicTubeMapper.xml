@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.SysTopicTubeDao">
+    <resultMap id="BaseSysTopicTubeResultMap" type="org.lxrookie.start.substance.entity.SysTopicTubeEntity">
+            <id column="SYS_TOPIC_TUBE_ID"              property="sysTopicTubeId"              jdbcType="VARCHAR" />
+            <result column="SYS_TOPIC_TUBE_KEY"         property="sysTopicTubeKey"             jdbcType="VARCHAR" />
+            <result column="SYS_TOPIC_TUBE_VALUE"       property="sysTopicTubeValue"           jdbcType="VARCHAR" />
+            <result column="SYS_TOPIC_TUBE_STATUS"      property="sysTopicTubeStatus"          jdbcType="INTEGER" />
+            <result column="SYS_TOPIC_TUBE_CREATE_TIME" property="sysTopicTubeCreateTime"      jdbcType="TIMESTAMP" />
+            <result column="SYS_TOPIC_TUBE_DESCRIPTION" property="sysTopicTubeDescription"     jdbcType="VARCHAR" />
+    </resultMap>
+
+
+    <select id="selectSysTopicTubeEntity" resultMap="BaseSysTopicTubeResultMap">
+        select *from SYS_TOPIC_TUBE WHERE SYS_TOPIC_TUBE_KEY = #{key}
+    </select>
+
+</mapper>

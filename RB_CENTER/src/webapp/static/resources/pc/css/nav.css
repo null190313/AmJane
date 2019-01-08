@@ -1,0 +1,364 @@
+@charset "utf-8";
+body, html {
+    height: 100%;
+    background: #e2e2e2
+}
+
+body, ul {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font: 14px 微软雅黑, 宋体, arial narrow, HELVETICA;
+    -webkit-text-size-adjust: 100%
+}
+
+li {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+.nav_persion {
+    width: 220px;
+    height: 500px;
+    /*background: #263238;*/
+    background: #FFFFFF;
+    transition: all .3s;
+    float: right
+}
+
+.nav_persion a {
+    display: block;
+    overflow: hidden;
+    padding-left: 20px;
+    line-height: 46px;
+    max-height: 46px;
+    /* color: #abb1b7;*/
+    color: #0C0C0C;
+    transition: all .3s
+}
+
+.nav_persion a span {
+    margin-left: 15px
+}
+
+.nav-item {
+    position: relative
+}
+
+.nav-item.nav-show {
+    border-bottom: 0
+}
+
+.nav-item ul {
+    display: none;
+    /*background: rgba(0, 0, 0, .1)*/
+    background: #FFFFFF;
+}
+
+.nav-item.nav-show ul {
+    display: block
+}
+
+.nav-item > a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 46px;
+    /* background: #34a0ce;*/
+    background: #FFFFFF;
+    opacity: 0;
+    transition: all .3s
+}
+
+.nav_persion .nav-icon {
+    font-size: 20px;
+    position: absolute;
+    margin-left: -1px
+}
+
+.icon_1::after {
+    content: "\e62b"
+}
+
+.icon_2::after {
+    content: "\e669"
+}
+
+.icon_3::after {
+    content: "\e61d"
+}
+
+.nav-more {
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    transition: transform .3s
+}
+
+.nav-more::after {
+    content: "\e621"
+}
+
+.nav-show .nav-more {
+    transform: rotate(90deg)
+}
+
+.nav-show, .nav-item > a:hover {
+    color: #0C0C0C;
+    background: rgba(0, 0, 0, .1)
+}
+
+.nav-show > a:before, .nav-item > a:hover:before {
+    opacity: 1
+}
+
+.nav-item li:hover a {
+    color: #fff;
+    background: rgba(0, 0, 0, .1)
+}
+
+.nav-mini.nav {
+    width: 60px
+}
+
+.nav-mini.nav .nav-icon {
+}
+
+.nav-mini.nav .nav-item > a span {
+    display: none
+}
+
+.nav-mini.nav .nav-more {
+    margin-right: -20px
+}
+
+.nav-mini.nav .nav-item ul {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 180px;
+    z-index: 99;
+    background: #FFFFFF;
+    overflow: hidden
+}
+
+.nav-mini.nav .nav-item:hover {
+    /*  background: rgba(255, 255, 255, .1);*/
+    background: #FFFFFF;
+}
+
+.nav-mini.nav .nav-item:hover .nav-item a {
+    color: #fff
+}
+
+.nav-mini.nav .nav-item:hover a:before {
+    opacity: 1
+}
+
+.nav-mini.nav .nav-item:hover ul {
+    display: block
+}
+
+/*个人信息*/
+#centerWrap {
+    height: 850px;
+    width: 100%;
+}
+
+#centerMainTree {
+    height: 800px;
+    width: 25%;
+    float: left;
+    margin-top: 55px
+}
+
+#centerMain {
+    height: 850px;
+    width: 57.5%;
+    float: left;
+}
+
+#centerMainHeader {
+    width: 100%;
+    height: 65px;
+    float: left
+}
+
+#centerMainHeaderInfo {
+    line-height: 65px;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+#centerMainHeaderInfoHr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: #A0A0A0
+}
+
+#centerContent {
+    height: 600px;
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    float: left;
+}
+
+#centerContentHeadPortrait {
+    width: 115px;
+    height: 115px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 100%;
+    display: flex;
+    overflow: hidden;
+    float: left;
+}
+
+#centerContentHeadPortrait img {
+    width: 100%;
+    height: auto;
+}
+
+#centerContentMain {
+    width: 760px;
+    height: 480px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px
+}
+
+#centerContentMainLingId {
+    width: 70%;
+    height: 140px;
+    float: left;
+    margin-left: 15px;
+}
+
+#centerContentMainId {
+    width: 100%;
+    height: 45px;
+}
+
+#centerContentMainId span {
+    line-height: 45px;
+    font-size: 18px;
+    margin-left: 15px
+}
+
+#centerContentTable {
+    width: 50%;
+    height: 80px;
+    margin-left: 8px
+}
+
+#centerContentTable tr {
+    width: 100%;
+    height: 22px
+}
+
+.centerContentTableWrite {
+    width: 40px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 15px;
+    color: black
+}
+
+.centerContentTableNum {
+    width: 40px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 15px;
+    color: black
+}
+
+.centerContentTableInterval {
+    width: 6px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.centerContentTableInterval div {
+    float: left;
+    width: 1px;
+    height: 25px;
+    background: #CCCCCC;
+}
+
+#centerPersion {
+    width: 14%;
+    height: 90px;
+    float: left;
+}
+
+#centerPersion span {
+    line-height: 55px;
+    text-align: center;
+"><a href=" " style=" font-size: 13 px
+}
+
+#centerPersionHr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: #A0A0A0
+}
+
+#centerPersionMain {
+    height: 300px;
+    width: 300px;
+    margin-left: 15px;
+    float: left
+}
+
+#centerPersionMainTable {
+    width: 100%;
+    height: 300px;
+    color: black
+}
+
+#centerPersionMainTable tr {
+    width: 65%;
+    height: 20px
+}
+
+#centerPersionMainTableLeft {
+    line-height: 30px;
+    height: 30px;
+    width: 15px;
+    text-align: center
+}
+
+#centerPersionMainTableRight {
+    line-height: 30px;
+    height: 30px;
+    width: 55px
+}
+
+#alterInfo {
+    float: right;
+    width: 110px;
+    height: 90px
+}
+
+#alterInfo span {
+    line-height: 55px;
+    text-align: center;
+}

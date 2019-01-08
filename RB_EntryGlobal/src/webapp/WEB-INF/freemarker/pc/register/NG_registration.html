@@ -1,0 +1,179 @@
+<#include "../common/refile/quote.html">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<style>
+    /* radio */
+    label.bui-radios-label input {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    label.bui-radios-label .bui-radios {
+        display: inline-block;
+        position: relative;
+        width: 13px;
+        height: 13px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        border-radius: 50%;
+        vertical-align: -2px;
+    }
+
+    label.bui-radios-label input:checked + .bui-radios:after {
+        position: absolute;
+        content: "";
+        width: 7px;
+        height: 7px;
+        background-color: #fff;
+        border-radius: 50%;
+        top: 3px;
+        left: 3px;
+    }
+
+    label.bui-radios-label input:checked + .bui-radios {
+        background: #fb593f;
+        border: 1px solid #fb593f;
+    }
+
+    label.bui-radios-label input:disabled + .bui-radios {
+        background-color: #e8e8e8;
+        border: solid 1px #979797;
+    }
+
+    label.bui-radios-label input:disabled:checked + .bui-radios:after {
+        background-color: #c1c1c1;
+    }
+
+    label.bui-radios-label.bui-radios-anim .bui-radios {
+        -webkit-transition: background-color ease-out .3s;
+        transition: background-color ease-out .3s;
+    }
+</style>
+	<div class="wrapper sticky_footer">
+    	<#include "../common/header/NG_header.shtml">
+        <div id="content" class="">
+        	<div class="inner">
+            	<div class="general_content">
+                	<div class="main_content">
+                    	<#include "../common/sub/NG_nowAddress.html">
+                        <div class="separator" style="height:28px;"></div>
+                        
+                        <p class="general_title"><span>注册登录</span></p>
+                        <div class="separator" style="height:39px;"></div>
+                        
+                        <div class="block_registration">
+                        	<form action="${EntryGlobalLocation}checkRegisInfo.do" class="w_validation" id="registerForm"/>
+                            	<div class="col_1" style="float: left;">
+                                	<div class="label"><p>昵称<span>*</span>:</p></div>
+                                    <div class="field"><input name="userNickName" type="text" class="req"  style="align-items: center;" id="regUserNickName"/>
+                                    </div>
+                                    <div class="clearboth"></div>
+                                    <div class="separator" style="height:14px;"></div>
+
+                                    
+                                    <div class="label"><p>密码<span>*</span>:</p></div>
+                                    <div class="field"><input name="userPasword" type="password" class="req" id="regUserFirstPassword"/></div>
+                                    <div class="clearboth"></div>
+                                    <div class="separator" style="height:12px;"></div>
+                                    
+                                    <div class="label"><p>再次输入密码<span>*</span>:</p></div>
+                                    <div class="field"><input name="userSecondPassword" type="password" class="req" id="regUserSecondPassword"/></div>
+                                    <div class="clearboth"></div>
+                                    <div class="separator" style="height:14px;"></div>
+
+                                    <div class="label"><p>手机号<span>*</span>:</p></div>
+                                    <div class="field"><input name="userPhone" type="text" id="regPhone"/></div>
+                                    <div class="clearboth"></div>
+                                    <div class="separator" style="height:12px;"></div>
+
+<!--                                    <div class="label"><p>邮箱<span>*</span>:</p></div>
+                                    <div class="field"><input type="text" class="req" /></div>
+                                    <div class="clearboth"></div>-->
+
+                                    <div class="separator"></div>
+                                    <div class="label" ><p>获取验证码<span>*</span>:</p></div>
+                                    <div class="field_valida"><input type="text" id="regCode" name="userDetectionCode"/>
+                                    </div>
+                                    <input type="button" class="getCodeByPhone" id="achieveRegisCode" value="免费获取验证码"/>
+                                    <div class="clearboth"></div>
+                                    <div class="separator" style="height:12px;"></div>
+
+                                    <div class="label"><p>性别:</p></div>
+                                    <div class="checkbox">
+                                        <label class="bui-radios-label bui-radios-anim">
+                                            <input type="radio" name="userSex" value="0"/><i class="bui-radios"></i> 男
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="bui-radios-label bui-radios-anim">
+                                            <input type="radio"  name="userSex" value="1"/><i class="bui-radios"></i> 女
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="bui-radios-label bui-radios-anim">
+                                            <input type="radio" checked="" name="userSex" value="2"/><i class="bui-radios"></i>保密
+                                        </label>
+                                    </div>
+                                    <div class="clearboth"></div>
+                                    <div class="separator" style="height:12px;"></div>
+
+                                    <div class="label"><p>职业:</p></div>
+                                    <div class="select">
+                                        <select class="custom_select" name="userProfessional">
+                                            <option  value = "保密"  selected = "selected" >保密</option>
+                                            <#list professionals as professional>
+                                                <option  value = "${professional.userProfessional!}">${professional.userProfessional!}</option>
+                                           </#list>
+                                        </select>
+                                    </div>
+                                    <div class="clearboth"></div>
+
+                                </div>
+                         <#--       <div class="clearboth"></div>
+                                <div class="separator" style="height:32px;"></div>-->
+
+                                <div class="col_1_Right">
+                                    <div class="errorInfoCla" id="nickError"><span></span></div>
+                                    <div class="lineNull"></div>
+                                    <div class="errorInfoCla" id="passFirstError"></div>
+                                    <div class="lineNull"></div>
+                                    <div class="errorInfoCla"  id="passSecondError"><span></span></div>
+                                    <div class="lineNull"></div>
+                                    <div class="errorInfoCla" id="phoneError"><span></span></div>
+                                    <div class="lineNull"></div>
+                                    <div class="errorInfoCla" id="regCodeError"><span></span></div>
+                                </div>
+                                <div class="clearboth"></div>
+                                <div class="separator" style="height:32px;"></div>
+                                <p class="info_text">点击"注册"按钮,将代表您同意本服务条款(<a href="#">用户协议</a>)</p>
+                                <p class="info_text"><input type="submit" class="general_button" value="注册" id="regSubmit"/></p>
+                                <p class="info_text">快速登录</p>
+                                <div class="three_party_login">
+                                    <a href="#">
+                                        <img src="static/resources/pc/pic/qulogin/weixin_logo.png" alt="" id="three_login_wexin"  />
+                                    </a>
+                                    <a href="#">
+                                        <img src="static/resources/pc/pic/qulogin/qq_logo.png" alt="" id="three_login_qq" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="static/resources/pc/pic/qulogin/baidu_logo.png" alt="" id="three_login_baidu" />
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="line_3" style="margin:42px 0px 0px;"></div>
+                        
+                    </div>
+                    
+                	<div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+    	<!-- CONTENT END -->
+    </div>
+<!-- FOOTER BEGIN -->
+<#include "../common/footer/NG_footer.shtml"></include>
+<!-- FOOTER END -->

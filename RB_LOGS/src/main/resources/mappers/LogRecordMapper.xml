@@ -1,0 +1,34 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.LogRecordDao">
+    <resultMap id="BaseLogRecordResultMap" type="org.lxrookie.start.substance.entity.LogRecordEntity">
+            <id column="LOG_RECORD_ID"              property="logRecordId"              jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_TYPE_ID"     property="logRecordTypeId"          jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_COMMENT"     property="logRecordComment"         jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_LEVEL"       property="logRecordLevel"           jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_CREATE_TIME" property="logRecordCreateTime"      jdbcType="TIMESTAMP" />
+            <result column="LOG_RECORD_STATE"       property="logRecordState"           jdbcType="INTEGER" />
+            <result column="LOG_RECORD_CLIENT"      property="logRecordClient"          jdbcType="INTEGER" />
+            <result column="LOG_RECORD_OUTPUT_FILEPATH_ID" property="logRecordOutPutFilepathId" jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_OPERATION_ID" property="logRecordOperationId"    jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_SYSTEM_NAME"  property="logRecordSystemName"     jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_OPERATION"    property="logRecordOperation"      jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_SYS_USER"     property="logRecordSysUser"        jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="LogRecordKey">
+        LOG_RECORD_ID,LOG_RECORD_TYPE_ID,LOG_RECORD_COMMENT,LOG_RECORD_LEVEL,LOG_RECORD_CREATE_TIME,LOG_RECORD_STATE,
+        LOG_RECORD_CLIENT,LOG_RECORD_OUTPUT_FILEPATH_ID,LOG_RECORD_OPERATION_ID,LOG_RECORD_SYSTEM_NAME,LOG_RECORD_OPERATION,
+        LOG_RECORD_SYS_USER
+    </sql>
+    <sql id="LogRecordValue">
+        #{logRecordId},#{logRecordTypeId},#{logRecordComment},#{logRecordLevel},#{logRecordCreateTime},
+        #{logRecordState},#{logRecordClient},#{logRecordOutPutFilepathId},#{logRecordOperationId},#{logRecordSystemName},
+        #{logRecordOperation},#{logRecordSysUser}
+    </sql>
+
+
+
+</mapper>

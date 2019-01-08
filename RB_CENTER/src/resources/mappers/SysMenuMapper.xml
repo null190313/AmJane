@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.SysMenuSystemDao">
+    <resultMap id="BaseSysMentSystem" type="org.lxrookie.start.substance.entity.SysMenuSystemEntity">
+            <id column="SYS_MENU_ID"              property="sysMenuId"              jdbcType="VARCHAR" />
+            <id column="SYS_MENU_KEY"             property="sysMenuKey"             jdbcType="VARCHAR" />
+            <id column="SYS_MENU_VALUE"           property="sysMenuValue"           jdbcType="VARCHAR" />
+            <id column="SYS_MENU_MARKING"         property="sysMenuMarking"         jdbcType="VARCHAR" />
+            <id column="SYS_MENU_ADDTIME"         property="sysMenuAddtime"         jdbcType="TIMESTAMP" />
+            <id column="SYS_MENU_STATE"           property="sysMenuState"           jdbcType="INTEGER" />
+            <id column="SYS_MENU_PIC_URL"         property="sysMenuPicUrl"          jdbcType="VARCHAR" />
+            <id column="SYS_MENU_URL"             property="sysMenuUrl"             jdbcType="VARCHAR" />
+            <result column="SYS_MENU_SORTCODE"    property="sysMenuSortCode"        jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="selectAllSysMentSystenSort" resultMap="BaseSysMentSystem">
+        select *from SYS_MENU_SYSTEM WHERE SYS_MENU_MARKING=#{sysMenuMarking} AND SYS_MENU_STATE=0 order by SYS_MENU_SORTCODE
+    </select>
+</mapper>

@@ -1,0 +1,32 @@
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="block_calendar">
+    <h4>Calendar</h4>
+
+    <div class="calendar" id="calendar_sidebar">
+    </div>
+
+    <script type="text/javascript">
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        $('#calendar_sidebar').DatePicker({
+            flat : true,
+            date : date,
+            calendars : 1,
+            starts : 1,
+            locale : {
+                days : ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期七'],
+                daysShort : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                daysMin : ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                months : ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                monthsShort : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                weekMin : 'wk'
+            }
+        });
+    </script>
+
+    <div class="line_2"></div>
+</div>

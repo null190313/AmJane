@@ -1,0 +1,47 @@
+.reg_Success{
+    width: 50%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reg_Success_Top{
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5%;
+    color: #f24024
+}
+.reg_Success_Center{
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin-top: 30px;
+    color: #f24024
+}
+.reg_Success_Center a{
+    font-size: 18px;
+    font-weight: bold;
+    color: #f24024
+}
+.reg_Success_Bottom{
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #f24024
+}
+/*-------------------------*/
+/*center menu logo*/
+.nav-item a img{
+    vertical-align:middle;
+}

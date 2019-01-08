@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="RB_BLOG" />
+        <module name="RB_CENTER" />
+        <module name="RB_CLOUD" />
+        <module name="RB_DIARY" />
+        <module name="RB_EntryGlobal" />
+        <module name="RB_EurekaCenter" />
+        <module name="RB_LOGS" />
+        <module name="RB_NOVEL" />
+        <module name="RB_SHARING" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RB_Backstage" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

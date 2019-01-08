@@ -1,0 +1,191 @@
+<#include "../common/refile/quote.html">
+${basicDataStacksHtml}
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head>
+<div class="wrapper sticky_footer">
+    <#include "../common/header/NG_header.html">
+    <div id="content" class="">
+        <div class="inner">
+            <div class="general_content">
+                <div class="main_content">
+                    <#include "../common/sub/NG_nowAddress.html">
+                </div>
+                <div class="clearboth"></div>
+            </div>
+        </div>
+    </div>
+    <!--个人信息--->
+    <div id="centerWrap">
+        <#include "../common/tree/tree.html">
+        <div id="centerMain">
+            <div id="centerMainHeader">
+                <span id="centerMainHeaderInfo">个人资料</span>
+                <hr id="centerMainHeaderInfoHr"/>
+            </div>
+            <!--内容-->
+            <div id="centerContent">
+                <!--头像-->
+                <!--信息内容-->
+                <div id="centerContentMain">
+                    <div id="centerContentHeadPortrait">
+                    <#-- <img src="static/resources/pc/pic/center/img1.jpg">-->
+                        <img src="${personal.userHeadPicUrl!}">
+                    </div>
+                    <div id="centerContentMainLingId">
+                        <div id="centerContentMainId">
+                            <span>ID : ${personal.userAccount!}</span>
+                        </div>
+                        <table id="centerContentTable">
+                            <tr>
+                                <td class="centerContentTableWrite">关注 :</td>
+                                <td class="centerContentTableNum">${personalData.userMessageFocus!}</td>
+                                <td class="centerContentTableInterval">
+                                    <div></div>
+                                </td>
+                                <td class="centerContentTableWrite">粉丝 :</td>
+                                <td class="centerContentTableNum">${personalData.userMessageFans!}</td>
+                                <td class="centerContentTableInterval">
+                                    <div></div>
+                                </td>
+                                <td class="centerContentTableWrite">文章 :</td>
+                                <td class="centerContentTableNum">${personalData.userMessageBlog!}</td>
+                            </tr>
+                            <tr>
+                                <td class="centerContentTableWrite">共享 :</td>
+                                <td class="centerContentTableNum">${personalData.userMessageShared!}</td>
+                                <td class="centerContentTableInterval">
+                                    <div></div>
+                                </td>
+                                <td class="centerContentTableWrite">暂定 :</td>
+                                <td class="centerContentTableNum">0</td>
+                                <td class="centerContentTableInterval">
+                                    <div></div>
+                                </td>
+                                <td class="centerContentTableWrite">存储 :</td>
+                                <td class="centerContentTableNum">${personalData.userMessageStorage!}G</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="centerPersion">
+                        <span>个人主页</a></span>
+                    </div>
+                    <hr id="centerPersionHr"/>
+                    <div id="centerPersionMain">
+                        <table id="centerPersionMainTable">
+                            <tr>
+                                <td class="centerPersionMainTableLeft">昵称：</td>
+                                <td class="centerPersionMainTableRight">${personal.userNickName!}</td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">实名：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if personal.userRealName?exists>
+                                        ${personal.userRealName!}
+                                    <#else>
+                                        无
+                                    </#if></td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">性别：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if (personal.userSex)! == 1>
+                                        女
+                                    <#elseif  (personal.userSex)! == 0>
+                                        男
+                                    <#else>
+                                        保密
+                                    </#if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">生日：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if personal.userBirthday?exists>
+                                        ${personal.userBirthday!}
+                                    <#else>
+                                        无
+                                    </#if></td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">邮箱：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if personal.userEamil?exists>
+                                        ${personal.userEamil!}
+                                    <#else>
+                                        无
+                                    </#if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">手机：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if personal.userPhone?exists>
+                                        ${personal.userPhone}
+                                    <#else>
+                                        无
+                                    </#if>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">地区：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if (personal.userProvince?exists) && (personal.userCity?exists) &&  (personal.userCounty?exists) >
+                                        ${personal.userProvince!}-${personal.userCity!}-${personal.userCounty!}
+                                    <#else>
+                                            无
+                                    </#if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">行业：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if personal.userProfessional?exists>
+                                        ${personal.userProfessional!}
+                                    <#else>
+                                        无
+                                    </#if>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">身份：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if  personal.userIdentity?exists>
+                                        <#if (personal.userIdentity!) == 1>
+                                            学生
+                                        <#elseif (personal.userIdentity) == 2>
+                                            职场人
+                                        </#if>
+                                    <#else>
+                                        无
+                                    </#if></td>
+                            </tr>
+                            <tr>
+                                <td class="centerPersionMainTableLeft">简介：</td>
+                                <td class="centerPersionMainTableRight">
+                                    <#if personal.userIntroduction?exists>
+                                        ${personal.userIntroduction!}
+                                    <#else>
+                                        无
+                                    </#if>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="alterInfo">
+                        <span>修改信息</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 个人信息 -->
+</div>
+<!--个人信息  END-->
+</div>
+<!-- FOOTER BEGIN -->
+<#include "../common/footer/NG_footer.html"></include>
+<!-- FOOTER END -->

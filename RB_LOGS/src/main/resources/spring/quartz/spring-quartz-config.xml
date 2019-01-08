@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Quartz定时任务 开始 -->
+    <bean id="jobFactory" class="org.lxrookie.start.substance.task.JobFactory"></bean><!--不加这个注入service的时候会提示空指针  -->
+
+
+
+    <!-- 每天中午12点01 -->
+    <bean id="SprQueryPayCalendarRemindJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass">
+            <value>com.smzj.task.SprTipPayCalendarRemind</value>
+        </property>
+    </bean>
+    <bean id="sprQueryPayCalendarRemindTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail">
+            <ref bean="SprQueryPayCalendarRemindJob"/>
+        </property>
+        <property name="cronExpression">
+     		  <value>0 01 0-23 * * ?</value>
+        </property>
+    </bean>
+
+	<bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobFactory" ref="jobFactory"></property>
+		<property name="triggers">
+			<list>
+            	<ref bean="sprQueryPayCalendarRemindTrigger"/>
+            </list>
+        </property>
+	</bean>
+    <!--Quartz定时任务结束 -->
+
+</beans>

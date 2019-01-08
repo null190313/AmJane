@@ -1,0 +1,18 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.UserBaseProfessionalDao">
+    <resultMap id="BaseUserBaseProfessionalMap" type="org.lxrookie.start.substance.entity.UserBaseProfessionalEntity">
+            <id column="USER_PROFESSIONAL_ID"      property="userProfessionalId"    jdbcType="VARCHAR" />
+            <result column="USER_PROFESSIONAL"     property="userProfessional"      jdbcType="VARCHAR" />
+            <result column="USER_CREATE_TIME"      property="userCreateTime"        jdbcType="TIMESTAMP" />
+            <result column="USER_STATE"            property="userState"             jdbcType="INTEGER" />
+    </resultMap>
+
+
+    <select id="selectAllUserBaseProfessional" resultMap="BaseUserBaseProfessionalMap">
+        select *from USER_BASE_PROFESSIONAL pro where pro.USER_STATE = 0
+    </select>
+
+</mapper>

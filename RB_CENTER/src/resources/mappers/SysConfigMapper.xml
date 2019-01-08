@@ -1,0 +1,29 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.SysConfigDao">
+    <resultMap id="BaseSysConfigResultMap" type="org.lxrookie.start.substance.entity.SysConfigEntity">
+            <id column="SYS_CONFIG_ID" property="sysConfigId" jdbcType="VARCHAR" />
+            <result column="SYS_CONFIG_KEY" property="sysConfigKey" jdbcType="VARCHAR" />
+            <result column="SYS_CONFIG_VALUE" property="sysConfigValue" jdbcType="VARCHAR" />
+            <result column="SYS_CONFIG_STATE" property="sysConfigState" jdbcType="VARCHAR" />
+            <result column="SYS_CONFIG_CREATE_TIME" property="sysConfigCreateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="SysConfigKey">
+        SYS_CONFIG_ID,SYS_CONFIG_KEY,SYS_CONFIG_VALUE,SYS_CONFIG_STATE,SYS_CONFIG_CREATE_TIME,SYS_CONFIG_DESCRIPTION
+    </sql>
+    <sql id="SysConfigValue">
+        #{sysConfigId},#{sysConfigKey},#{sysConfigValue},#{sysConfigState},#{sysConfigCreateTime}.#{sysConfigDescription}
+    </sql>
+
+    <select id="selectSysConfigByKey" resultMap="BaseSysConfigResultMap">
+        SELECT *FROM SYS_CONFIG SO WHERE SO.SYS_CONFIG_KEY = #{key} AND SO.SYS_CONFIG_STATE = 0
+    </select>
+
+
+    <update id="closeSysConfig" parameterType="org.lxrookie.start.substance.entity.SysConfigEntity">
+        UPDATE SYS_CONFIG SET SYS_CONFIG_STATE = 1 where SYS_CONFIG_ID = #{sysConfigId}
+    </update>
+
+</mapper>

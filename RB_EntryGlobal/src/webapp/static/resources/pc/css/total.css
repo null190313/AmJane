@@ -1,0 +1,37 @@
+/*Register*/
+.col_1_Right {
+    float: right;
+    width: 200px;
+    height: auto;
+}
+
+.errorInfoCla {
+    height: 28px;
+    line-height: 28px;
+    color: red;
+    font-size: 13px;
+    font-family: Georgia;
+    font-weight: bold;
+    visibility:hidden;
+}
+.lineNull{
+    height: 14px;
+}
+/*login*/
+.col_login_Right {
+    float: right;
+    width: 200px;
+    height: auto;
+}
+
+.errorInfoLogin {
+    height: 28px;
+    line-height: 28px;
+    color: red;
+    font-size: 13px;
+    font-family: Georgia;
+    font-weight: bold;
+}
+.lineNull{
+    height: 14px;
+}

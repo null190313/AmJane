@@ -1,0 +1,1 @@
+org.springframework.context.ApplicationContextInitializer=\org.lxrookie.start.substance.initialize.ConfigurationFileRead

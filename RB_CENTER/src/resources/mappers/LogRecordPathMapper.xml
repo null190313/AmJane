@@ -1,0 +1,24 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.lxrookie.start.substance.dao.LogRecordPathDao">
+    <resultMap id="BaseLogRecordPathResultMap" type="org.lxrookie.start.substance.entity.LogRecordPathEntity">
+            <id column="LOG_RECORD_PATH_ID"              property="logRecordPathId"           jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_PATH_FILENAME"    property="logRecordPathFileName"     jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_PATH_FILEPATH"    property="logRecordPathFilePath"     jdbcType="VARCHAR" />
+            <result column="LOG_RECORD_CREATE_TIME"      property="logRecordPathCreateTime"   jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <sql id="LogRecordPathKey">
+          LOG_RECORD_PATH_ID,LOG_RECORD_PATH_FILENAME,LOG_RECORD_PATH_FILEPATH,LOG_RECORD_CREATE_TIME
+    </sql>
+    <sql id="LogRecordPathValue">
+        #{logRecordPathId},#{logRecordPathFileName},#{logRecordPathFilePath},#{logRecordPathCreateTime}
+    </sql>
+
+
+
+
+
+</mapper>
